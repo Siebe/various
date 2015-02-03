@@ -1,0 +1,25 @@
+flee:
+    spawn:
+        world: Spawn
+        x: 0
+        y: 0
+        z: 0
+        pitch: 0
+        yaw: 0
+    delay: 60
+    world_list:
+        - PvP
+   
+pleducregister:
+    siteurl: http://www.pleduc.nl/minecraft/forum/add_user.php
+    
+simplefirstspawn:
+    spawn:
+        world: Spawn
+        x: 0
+        y: 0
+        z: 0
+        pitch: 0
+        yaw: 0
+    mainworld: Spawn
+    

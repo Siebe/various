@@ -1,0 +1,102 @@
+## Example config file for the CreativeCrowds InitScript 
+
+#basic info about the project
+project:
+  #required name of project
+  name: "VerbeterDeTest"
+  #optional project url, default is "http://www.{project.name}.nl" in lowercase
+  url: "http://www.verbeterdetest.nl"
+  #optional project main directory, default is "/www/www.{project.name}.nl/" in lowercase
+  maindir: "/www/www.verbeterdetest.nl/"
+  #optional webroot directory, default is "{project.maindir}web/" in lowercase
+  webroot: "/www/www.verbeterdetest.nl/web/"
+  #optional directory to start git, default is project.maindir
+  gitdir: "/www/www.verbeterdetest.nl/"
+  #optional directory where symfony.php is, default is project.maindir
+  symfonydir: "/www/www.verbeterdetest.nl/"
+  #optional (apache) log directory default is "{project.symfonydir}log/" in lowercase
+  logdir: "/www/www.verbeterdetest.nl/log/"
+
+#info about the database connection
+database:
+  #optionsal root user of db (to create user/database), default "root"
+  root_user: "root"
+  #optional root pw (will prompt if not given)
+  root_pw: "vdb"
+  #optional hostname, default is "localhost"
+  host: "localhost"
+  #optional database name, default is {project.name} in lowercase
+  name: "verbeterdetest"
+  #required database username
+  user: "vdb"
+  #optional database password (will prompt if not given, but Linux only!)
+  password: "vdb"
+  #optional database fixture file, default is "{database.name}.sql" (won't exit if not found)
+  fixture: "verbeterdetest.sql"
+ 
+#info about the git repository
+git:
+  #optional git repository, default is "https://github.com/sbalen/{project.name}.git" projectname with one capital
+  repo: "https://github.com/sbalen/Verbeterdebuurt.git"
+  #optional git branch, default is "master"
+  branch: "www"
+  #required git user
+  user: "Siebe"
+  #optional git password (will prompt if not given)
+  password: "1234vijf"
+  
+#list of file replacements. File 'target' will be overwritten bij file 'source'. Source can be a local file/dir
+#or from a remote source using ssh. 
+files:
+  -
+    #source is new file
+    source: "config/app.yml.dist"
+    #target is original file or new name for file
+    target: "config/app.yml"
+  -
+    source: "config/databases.yml.dist"
+    target: "config/databases.yml"
+  - 
+    #for ssh a ssh_user is required
+    ssh_user: "siebe"
+    #ssh password is optional (will prompt if not given)
+    #ssh_pw: "password"
+    source: "host86.griv.nl:/www/www.verbeterdebuurt.nl/web/blog"
+    target: "web/blog"
+#  - 
+#    ssh_user: "siebe"
+#    ssh_pw: "******"
+#    source: "host86.griv.nl:/www/www.verbeterdebuurt.nl/web/sf"
+#    target: "web/sf"
+ 
+#create symlinks if needed (nor git, nor ssh do this)
+symlinks:
+  -
+    #source is the location of the link itself
+    source: "web/sf"
+    #target is where the link is pointed at
+    target: "lib/vendor/symfony/data/web/sf"
+
+#replace/add certain keys and values to config files (databases.yml will be done by default)
+yaml_replacements:
+  -
+    file: "config/app.yml"
+    #key's are seperated with ":", so this would be $app['all']['map']['google_api_keys']['verbeterdetest.nl']
+    key: "all:map:google_api_keys:verbeterdetest.nl"
+    value: "putyergooglekeyhere"
+
+#list of jobs to be placed in crontab
+cronjobs:
+  - 
+    #required timing of job
+    timing: "30 * * * *"
+    #optional user of job, default is root
+    user: "root"
+    #optional php script to start, default is {project.maindir}symfony 
+    php_file: "/www/www.verbeterdetest.nl/symfony"
+    #optional task or arguments, default empty
+    task: "vbdb:send-ideas"
+    #optional ouput stream routing, default is /dev/null 2>&1 (no output)
+    output: "/dev/null 2>&1"
+
+---

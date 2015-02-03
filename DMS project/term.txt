@@ -1,0 +1,25 @@
+Network:
+
+A network is a collection of "cells". In the scope of NMS a network can often be seen as a single song without a linear stucture. The whole of the network defines how the structure of the song will turn out when playing and it. This is what makes the music non-linear, but not without predefined structure.
+
+
+Cells: 
+
+A cell (also know as "node") is an element of our network. Cells can be connected to each other in order to form the actual network. In the scope of NMS a cell represents a piece of music that should be played under certain circumstances (states) and may only be played right after certain other cells (borders).
+
+
+States:
+
+A state may reflect a certain cirumstance of the outside world. The music within each cell should hold a certain value of this state as well. States could be defined as anything, but should have a clear connection with the music as well as the outside world. Trying to play cells that conform the current states is what makes the system adaptive.
+
+
+Borders:
+
+A border connects one cell with eachother. Borderds define which cells may follow a certain cell (one-way). Each border has a "resistance" value, which can define preference between borders. [Borders can be connected with "exits" within the same cell, by default a border is connected with all exits.]
+
+
+Exits:
+
+An exit is a temporal point or window within the music of each cell. It defines when the system should start the search for the next cell, aswell when and how the music of two cells should "switch". Exits can be points or "area's" and may define fading. [As borders to exits, exits also connect to borders.]
+
+

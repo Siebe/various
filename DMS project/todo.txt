@@ -1,0 +1,27 @@
+Todo tech:
+
+- test, debug, test, debug, test, debug
+*done 18-02-11* review 'backtrace' method.. it's a while loop and it doesn't even work properly. just store the complete path.
+- debug selfrepeat
+- debug history, add power of two thingie
+- review xml input method.. really need to find a ready-to-use general cell-network format with some simple software
+- optimize dmsCleanPNet and thus search-algo, make use of stored path (if state doesn't change, why bother search for a new one)
+- research and create library 'wrapper" (or shell, deamon whater) first .so or something and create test program, as multi-platform as possible
+- create a test-player/creator, somehow linking audio files with cells, in the future it should be able to link to other stuff as well (midi, multiple files)
+
+Todo ideas:
+
+- add id's to exit and borders and ability for exits to bind with borders and vice versa, means extra dimension of data structure. Also have to totally rethink how the player and searchengine will communicate about timing.
+- more options for exits, think up something for "time-independent" loops (drone, silence cells), possibly a minimum-time
+- state ranges, so double the size of states, add an int to define range or single
+- sequence alteration or 'pathdiggers', lower/higher resistance of future borders if a certain sequence of cells is currently being played
+- multiple startcells, so the cell with the closest state can be chosen when the song begins. also end cells would be an idea (or see next point)
+- bridges towards other networks. this means the engine would do a search for this bridge to jump towards another network. the state of the bridge within the current network might be important, but the state of the cell in the new network is unimportant (unless working with multiple start cells)
+
+Todo far future ideas:
+- create a multi-channel cell player, maybe with some (more) dynamic mixing options, possibly within gui of first player
+- lots of "template" options in creation program, such as classes and special types as intro, outro, bridge, silence , drone, etc.
+- template/default types of states and possibly automagically generate state values for cells (canoris :D )
+- possible idea for keeping things 'straight' in chaotic networks of short (instrumental) cells: give cells prefable repeat-timings. like cells that should preferably be selected at the start of every 4 measures, or a small cell prefered to play every 2 beats with an offset off a beat from the beginning, in this case something like a snare. Also possibilities for coherent polyrithmic structures, when thining in working with multiple networks controlled by the same timer.
+- multiple networks playing at the same time is another story on itself, when thinking of different "channels" with loops. Each channel of audio could have its own network so that different combinations can be made on the fly, but there would have to be some system to assign "preferable" combinations. A possible workaround would to be use an extra "musical" state in each network which should be coherent to each other and make it highly dominant over the other states.
+

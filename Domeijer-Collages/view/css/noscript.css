@@ -1,0 +1,30 @@
+
+div#slides1  {
+	position: relative;
+	width: 100%
+}
+
+
+div.the-slide {
+	display: block;
+	overflow: hidden;
+	height: 0px;
+	padding-bottom: 50%;
+	margin: 30px 0px 30px 0px;
+}
+
+div#slides1 div img {
+	width: 90%;
+	display: block;
+	margin: -15% auto 0px auto;
+}
+
+div.image-click {
+	position: absolute;
+	display: inline;
+}	
+
+.jssora01l, .jssora01r, .jssora01ldn, .jssora01rdn
+{
+	display: none
+}

@@ -1,0 +1,9 @@
+name: PleducPlugins
+main: nl.pleduc.mc.pleducplugins.PleducPlugins
+version: 1.0
+author: JFK
+
+commands:
+    flee:
+        usage: "Flee, teleport with a delay. Admins do /flee set."
+

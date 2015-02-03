@@ -1,0 +1,9 @@
+I've made a LADSPA plugin in C, pretty low level using gcc. I'm currently using Renoise as a test environment, wich is a modern tracker program. Renoise allows me to load the plugin, put audio through and tweak the controls 'live'.
+
+My latest iteration makes Renoise crash and I don't understand why. I'd like to debug my plugin using gdb, but it's a bit hard to debug the whole thing. In fact gdb will give me an internal error if I try to just gdb Renoise, plus debugging a complete graphic tracker which is almost a full DAW doesn't seem a good idea.
+
+So I went looking for a suiteable LADSPA host that will suit as a 'shell' to debug my plugin in, preferably something that can be controlled using the cli. I did find two nice options: sox and applyplugin. Both allow me to run my plugin over an audio-file and set control values.
+
+But i ran into a problem: I can't get the plugin to crash. My best guess is that my plugin chrashes when the controls change on runtime. Also because it seems that Renoise crashes as soon as one of the control values changes. Both sox and applyplugin do not seem to have the capability to tweak the controls during runtime.
+
+Now I'm looking for more LADSPA hosts. Preferably something really simple, but with the ability to change the control values on runtime, or at least able to 'slope' the values somehow. I found one possible solution called ghostess, however this program only works with DSSI and I prefer using LADSPA for effect plugins.

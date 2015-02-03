@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dms_network>
+   <name>TestNetwork2</name>
+   <start_cell>0</start_cell>
+   <globalrepeat_time>30</globalrepeat_time>
+   <statediff_resistance>1</statediff_resistance>
+   <max_pathresistance>60</max_pathresistance>
+   <state id="0">TestState</state>
+   <state id="1">TestStateTwo</state>    
+
+   <cell id="0">
+      <name>TestCell0</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>10</globalrepeat>
+      <length>10.0</length>
+      <state id="0">0</state>
+      <state id="1">0</state>
+      <exit>
+         <time>10.0</time>
+
+      </exit>
+      <border>
+        <destination>1</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>3</destination>
+        <resistance>10</resistance>
+      </border>
+   </cell>
+
+   <cell id="1">
+      <name>TestCell1</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>10</globalrepeat>
+      <length>10.0</length>
+      <state id="0">1</state>
+      <state id="1">0</state>
+      <exit>
+         <time>10.0</time>
+      </exit>
+      <border>
+        <destination>2</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>4</destination>
+        <resistance>20</resistance>
+      </border>
+   </cell>
+
+  <cell id="2">
+      <name>TestCell2</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>10</globalrepeat>
+      <length>10.0</length>
+      <state id="0">0</state>
+      <state id="1">1</state>
+      <exit>
+         <time>10.0</time>
+      </exit>
+      <border>
+        <destination>3</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>0</destination>
+        <resistance>20</resistance>
+      </border>
+   </cell>
+
+  <cell id="3">
+      <name>TestCell3</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>10</globalrepeat>
+      <length>10.0</length>
+      <state id="0">1</state>
+      <state id="1">1</state>
+      <exit>
+         <time>10.0</time>
+      </exit>
+      <border>
+        <destination>4</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>1</destination>
+        <resistance>40</resistance>
+      </border>
+   </cell>
+
+  <cell id="4">
+      <name>TestCell4</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>10</globalrepeat>
+      <length>10.0</length>
+      <state id="0">2</state>
+      <state id="1">1</state>
+      <exit>
+         <time>10.0</time>
+      </exit>
+      <border>
+        <destination>0</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>2</destination>
+        <resistance>50</resistance>
+      </border>
+   </cell>
+</dms_network>

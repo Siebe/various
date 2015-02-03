@@ -1,0 +1,81 @@
+/*
+    CreativeCrowds Service Monitor Style Sheet
+*/
+
+@font-face
+{
+font-family: AmericanTypeWriter;
+src: url('american_typewriter.ttf'),
+     url('american_typewriter.eot'); /* IE9 */
+} 
+
+div.wrapper {    
+    margin: 10px;
+}
+
+img.logo {
+    display: block;
+    margin-left:auto; 
+    margin-right:auto;   
+    margin-bottom: 8px;
+}
+
+table.status {
+    margin-left:auto; 
+    margin-right:auto;
+    border: 2px solid black;
+    border-spacing: 0px;
+    border-collapse:collapse;
+    width: 300px;
+}
+
+p {
+    text-align: left;
+    margin: 0px;
+    padding: 3px;
+    font-family: "AmericanTypeWriter", "Courier New", Courier, monospace;
+}
+
+p.title {
+    font-size: 32px;
+    color: #E41517;
+    text-align: center;
+}
+
+p.functions {
+    font-size: 12px;
+    font-family: Verdana, Geneva;   
+    text-align: center;
+}
+
+p.servername {
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #E41517;
+    text-align: center;
+}
+
+p.ip_address {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva;
+}
+
+p.status_ok {
+    background-color: #00FF00;
+    font-size: 16px;
+    font-family: Verdana, Geneva;
+}
+
+p.status_fail {
+    background-color: #FF2020;
+    font-size: 16px;
+    font-family: Verdana, Geneva;
+}
+
+p.footer {
+    left: 10px;
+    bottom: 10px;
+    position: fixed;
+}

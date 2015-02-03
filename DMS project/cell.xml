@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dms_network [
+<!ELEMENT dms_network (name?, start_cell?, globalrepeat_time?, statediff_resistance, max_pathresistance?, state, cell+)>
+<!ELEMENT cell (name?, selfrepeat?, globalrepeat?, length?, state+, exit+, border+)>
+<!ATTLIST cell id CDATA #REQUIRED>
+<!ELEMENT exit (area?, fade?, time, endtime?, fadetime?)>
+<!ELEMENT border (destination, resistance)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT start_cell (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ATTLIST state id CDATA #REQUIRED>
+<!ELEMENT globalrepeat_time (#PCDATA)>
+<!ELEMENT statediff_resistance (#PCDATA)>
+<!ELEMENT max_pathresistance (#PCDATA)>
+<!ELEMENT selfrepeat (#PCDATA)>
+<!ELEMENT globalrepeat (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT fade (#PCDATA)>
+<!ELEMENT endtime (#PCDATA)>
+<!ELEMENT fadetime (#PCDATA)>
+<!ELEMENT destination (#PCDATA)>
+<!ELEMENT resistance (#PCDATA)>
+]>
+
+
+<dms_network>
+   <name>TestNetwork</name>
+   <start_cell>0</start_cell>
+   <globalrepeat_time>300</globalrepeat_time>
+   <statediff_resistance>5</statediff_resistance>
+   <max_pathresistance>100</max_pathresistance>
+   <state id="0">TestState</state>
+   <state id="1">TestStateTwo</state>      
+
+   <cell id="0">
+      <name>TestCell</name>
+      <selfrepeat>4</selfrepeat>
+      <globalrepeat>0</globalrepeat>
+      <length>12.34567</length>
+      <state id="0">1</state>
+      <state id="1">1</state>
+      <exit>
+         <time>9.87</time>
+      </exit>
+      <exit>
+         <area>1</area>
+         <fade>3</fade>
+         <time>7.1</time>
+         <endtime>9.1</endtime>
+         <fadetime>2.3</fadetime>
+      </exit>
+      <border>
+        <destination>1</destination>
+        <resistance>10</resistance>
+      </border>
+   </cell>
+
+   <cell id="1">
+      <name>TestCell2</name>
+      <selfrepeat>1</selfrepeat>
+      <globalrepeat>100</globalrepeat>
+      <length>12.34567</length>
+      <state id="0">2</state>
+      <state id="1">2</state>
+      <exit>
+         <time>9.87</time>
+      </exit>
+      <border>
+        <destination>1</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>1</destination>
+        <resistance>50</resistance>
+      </border>
+      <border>
+        <destination>2</destination>
+        <resistance>10</resistance>
+      </border>
+   </cell>
+
+   <cell id="2">
+      <state id="0">3</state>
+      <state id="1">3</state>
+      <exit>
+        <time>1.00</time>
+      </exit>
+      <border>
+        <destination>0</destination>
+        <resistance>10</resistance>
+      </border>
+      <border>
+        <destination>1</destination>
+        <resistance>10</resistance>
+      </border>
+   </cell>   
+</dms_network>

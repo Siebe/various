@@ -1,0 +1,21 @@
+#List of PlayerDetector units, start each unit with two spaces and a hypen -
+#Add properties under the hyphen starting with four spaces:
+#name is to identify the unit
+#world - the world where the field and lever reside
+#field - the field where players are detectes minX,maxX,minZ,maxZ 
+#lever - the location of the lever that should be toggled X,Y,Z
+#permission - optional permission player needs to toggle lever
+
+unit_list:
+  -
+    name: HomeTest
+    world: world
+    field: 600,650,-70,-60
+    lever: 666,66,-67
+    permission: jfk.testpermission
+  -
+    name: PleducTest
+    world: zombies
+    field: -1115,-1100,705,710
+    lever: -1111,4,700
+    
